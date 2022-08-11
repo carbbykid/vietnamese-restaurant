@@ -1,0 +1,69 @@
+@import "./variable.scss";
+@import "./utils.scss";
+
+@font-face {
+  font-family: "orqquidea";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/orqquidea.otf");
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  font-size: 14px;
+  color: var(--text);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#__next {
+  width: 100%;
+  background: linear-gradient(180deg, #00261c 0%, #384a42 100%);
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  object-fit: cover;
+}
+
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.gm-style-cc {
+  display: none;
+}
+
+.break-spaces {
+  white-space: break-spaces;
+}
