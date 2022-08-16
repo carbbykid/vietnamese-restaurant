@@ -1,12 +1,11 @@
 @import "./variable.scss";
-@import "./utils.scss";
 @import "./tailwind.scss";
 
 @font-face {
-  font-family: "orqquidea";
+  font-family: "rubikdirt";
   font-weight: 400;
   font-style: normal;
-  src: url("../fonts/orqquidea.otf");
+  src: url("../fonts/rubikdirt.ttf");
   font-display: swap;
 }
 
@@ -33,7 +32,7 @@ body {
 
 #__next {
   width: 100%;
-  background: linear-gradient(180deg, #00261c 0%, #384a42 100%);
+  background: #fff;
   overflow-x: hidden;
 }
 
@@ -67,4 +66,8 @@ p {
 
 .break-spaces {
   white-space: break-spaces;
+}
+
+.custom-img {
+  background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80')
 }
