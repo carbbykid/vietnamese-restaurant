@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    colors: {
+      "chipo-text": "#374048",
+      "chipo-white": "#fff",
+    },
   },
   plugins: [],
 };

@@ -1,4 +1,5 @@
 import Hero from "components/page/home/Hero";
+import Product from "components/page/home/Product";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -11,28 +12,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero
-        heading="Capture Photography"
-        message="I capture moments in nature and keep them alive."
+        heading="The future of tech is here"
+        message="Holisticly incentivize revolutionary collaboration and idea sharing
+        before cost effective users. Actual focused services before highly
+        efficient human capital."
       />
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quasi
-        reiciendis laboriosam at, consectetur minus quaerat repudiandae suscipit
-        iusto, nam tempora illum aperiam delectus, et a magnam? Reiciendis,
-        facilis perspiciatis! Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Dicta quasi reiciendis laboriosam at, consectetur minus quaerat
-        repudiandae suscipit iusto, nam tempora illum aperiam delectus, et a
-        magnam? Reiciendis, facilis perspiciatis! Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Dicta quasi reiciendis laboriosam at,
-        consectetur minus quaerat repudiandae suscipit iusto, nam tempora illum
-        aperiam delectus, et a magnam? Reiciendis, facilis perspiciatis! Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Dicta quasi
-        reiciendis laboriosam at, consectetur minus quaerat repudiandae suscipit
-        iusto, nam tempora illum aperiam delectus, et a magnam? Reiciendis,
-        facilis perspiciatis! Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Dicta quasi reiciendis laboriosam at, consectetur minus quaerat
-        repudiandae suscipit iusto, nam tempora illum aperiam delectus, et a
-        magnam? Reiciendis, facilis perspiciatis!
-      </div>
+      <Product />
     </div>
   );
 };
