@@ -26,10 +26,9 @@ const Header = (): JSX.Element => {
 
   return (
     <div
-      style={{
-        backgroundColor: `${isScroll ? "var(--white)" : "transparent"}`,
-      }}
-      className="fixed left-0 top-0 w-full z-10 ease-in duration-300"
+      className={`fixed left-0 top-0 w-full z-10 ease-in duration-300 font-["rubikdirt"] ${
+        isScroll ? "bg-white" : "bg-transparent"
+      }`}
     >
       <div
         className={`max-w-[1240px] m-auto flex justify-between items-center text-white ease-in duration-300 ${
@@ -38,33 +37,29 @@ const Header = (): JSX.Element => {
       >
         <Link href="/">
           <h1
-            style={{
-              color: `${isScroll ? "var(--text)" : "var(--white)"}`,
-              fontFamily: "rubikdirt",
-            }}
-            className="font-bold text-4xl cursor-pointer"
+            className={`font-bold cursor-pointer ease-in duration-200 hover:text-chipo-text ${
+              isScroll ? "text-chipo-text text-3xl" : "text-white text-4xl"
+            }`}
           >
             ChiPoPo
           </h1>
         </Link>
 
         <ul
-          style={{
-            color: `${isScroll ? "var(--text)" : "var(--white)"}`,
-            fontFamily: "rubikdirt",
-          }}
-          className="hidden sm:flex"
+          className={`hidden sm:flex font-["rubikdirt"] ease-in duration-200 ${
+            isScroll ? "text-chipo-text" : "text-white"
+          }`}
         >
-          <li className="p-4">
+          <li className="p-4 hover:text-chipo-text ease-in duration-200">
             <Link href="/">Home</Link>
           </li>
-          <li className="p-4">
+          <li className="p-4 hover:text-chipo-text ease-in duration-200">
             <Link href="/#gallery">Gallery</Link>
           </li>
-          <li className="p-4">
+          <li className="p-4 hover:text-chipo-text ease-in duration-200">
             <Link href="/work">Work</Link>
           </li>
-          <li className="p-4">
+          <li className="p-4 hover:text-chipo-text ease-in duration-200">
             <Link href="/contact">Contact</Link>
           </li>
         </ul>
@@ -77,12 +72,12 @@ const Header = (): JSX.Element => {
           {nav ? (
             <AiOutlineClose
               size={20}
-              style={{ color: `${isScroll ? "var(--text)" : "var(--white)"}` }}
+              className={`${isScroll ? "text-chipo-text" : "white"}`}
             />
           ) : (
             <AiOutlineMenu
               size={20}
-              style={{ color: `${isScroll ? "var(--text)" : "var(--white)"}` }}
+              className={`${isScroll ? "text-chipo-text" : "white"}`}
             />
           )}
         </div>
