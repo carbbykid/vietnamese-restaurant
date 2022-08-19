@@ -6,8 +6,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "chipo-text": "#374048",
+        "chipo-heading": "#374048",
         "chipo-blue": "#0084ff",
+        "chipo-text": "#4e575f",
+        "chipo-bg-second": "#f8fbfd",
+        "chipo-gray-blur": "#eee",
       },
     },
   },

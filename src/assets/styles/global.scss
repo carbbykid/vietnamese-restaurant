@@ -1,6 +1,14 @@
 @import "./variable.scss";
 @import "./tailwind.scss";
 
+@layer components {
+  .heading {
+    @apply text-xl font-bold tracking-tighter mb-[20px] sm:text-5xl text-center text-chipo-heading;
+  }
+
+
+}
+
 @font-face {
   font-family: "rubikdirt";
   font-weight: 400;
@@ -21,7 +29,7 @@ body {
 
 body {
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text);
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
@@ -71,3 +79,16 @@ p {
 .custom-img {
   background-image: url("/images/home/hero-background.jpeg");
 }
+
+
+// .swiper {
+//   &.swiper-custom {
+//     padding-bottom: 30px;
+//     // background: blue;
+//   }
+
+// }
+
+// .swiper-pagination {
+//     bottom: 0;
+// }

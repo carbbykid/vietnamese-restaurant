@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .heading {
+      @apply text-xl font-bold tracking-tighter mb-[20px] sm:text-5xl text-center text-chipo-heading;
+    }
+  }
+  
+@layer utilities {
+    .swiper {
+        &.swiper-custom {
+            padding-bottom: 30px;
+        }
+    }
+}
