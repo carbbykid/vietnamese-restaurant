@@ -11,6 +11,7 @@ module.exports = {
         "chipo-text": "#4e575f",
         "chipo-bg-second": "#f8fbfd",
         "chipo-gray-blur": "#eee",
+        "chipo-orange": "#f62",
       },
     },
   },

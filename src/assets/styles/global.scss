@@ -1,14 +1,6 @@
 @import "./variable.scss";
 @import "./tailwind.scss";
 
-@layer components {
-  .heading {
-    @apply text-xl font-bold tracking-tighter mb-[20px] sm:text-5xl text-center text-chipo-heading;
-  }
-
-
-}
-
 @font-face {
   font-family: "rubikdirt";
   font-weight: 400;
@@ -79,16 +71,3 @@ p {
 .custom-img {
   background-image: url("/images/home/hero-background.jpeg");
 }
-
-
-// .swiper {
-//   &.swiper-custom {
-//     padding-bottom: 30px;
-//     // background: blue;
-//   }
-
-// }
-
-// .swiper-pagination {
-//     bottom: 0;
-// }

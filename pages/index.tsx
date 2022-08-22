@@ -1,6 +1,7 @@
 import Collection from "components/page/home/Collection";
 import Hero from "components/page/home/Hero";
 import HowItWork from "components/page/home/HowItWork";
+import NewsLetter from "components/page/home/NewsLetter";
 import Product from "components/page/home/Product";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -29,7 +30,14 @@ const Home: NextPage = () => {
         message="Everybody loves tech gadgets, But our’s is different. Here is how it
         works. Its should be simple. Add how easy is to install your product"
       />
-      <Collection heading="" message="" />
+      <Collection
+        heading="OUR COLLECTION"
+        message="You are unique. You have unique style and you need a unique watch for you. Choose from our collection of watches."
+      />
+      <NewsLetter
+        heading="NEWSLETTER"
+        message="Subscribe to our product newsletter to get notified when we launch the product or when we completed a milestone."
+      />
     </div>
   );
 };

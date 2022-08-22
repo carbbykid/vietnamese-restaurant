@@ -6,12 +6,39 @@
     .heading {
       @apply text-xl font-bold tracking-tighter mb-[20px] sm:text-5xl text-center text-chipo-heading;
     }
-  }
-  
-@layer utilities {
-    .swiper {
-        &.swiper-custom {
-            padding-bottom: 30px;
-        }
+
+    .message {
+      @apply max-w-[100%] py-1 text-center m-auto font-light tracking-wide sm:text-xl sm:py-2 sm:max-w-[60%] text-chipo-text;
     }
+
+    .wrap-content {
+      @apply m-auto px-[15px] max-w-[1170px];
+    }
+    
+    .divider {
+      @apply border-4 border-chipo-gray-blur cursor-pointer hover:border-chipo-text duration-500 w-20 m-auto;
+    }
+
+    .swiper_custom {
+      &.swiper {
+        @apply pb-[50px];
+
+        .swiper-button-next, .swiper-button-prev {
+          top: 25%;
+          &:hover {
+            color: #0084ff;
+          }
+          color : #4e575f;
+          &::after {
+            
+            font-size : 30px;
+          }
+        }
+      
+    }
+  }
+}
+
+@layer utilities{
+  .btn-hover1 {@apply bg-[#374048] text-white}
 }

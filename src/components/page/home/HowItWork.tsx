@@ -8,13 +8,11 @@ const HowItWork = ({
 }): JSX.Element => {
   return (
     <div className="bg-chipo-bg-second pb-[160px] pt-[110px]">
-      <div className="m-auto  px-[15px] max-w-[1170px] ">
+      <div className="wrap-content">
         <h2 className="text-xl font-bold tracking-tighter mb-[20px] sm:text-5xl text-center text-chipo-heading">
           {heading}
         </h2>
-        <div className="max-w-[100%] text-md py-1 text-center m-auto font-light tracking-wide sm:text-xl sm:py-2 sm:max-w-[60%] text-chipo-text">
-          {message}
-        </div>
+        <div className="message">{message}</div>
         <div className="mt-[90px] flex gap-[20px] justify-center">
           {mockData.map((item, idx) => (
             <div key={idx} className="text-center">
