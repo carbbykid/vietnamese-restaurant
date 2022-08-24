@@ -1,4 +1,5 @@
 import Collection from "components/page/home/Collection";
+import Contact from "components/page/home/Contact";
 import Hero from "components/page/home/Hero";
 import HowItWork from "components/page/home/HowItWork";
 import NewsLetter from "components/page/home/NewsLetter";
@@ -37,6 +38,13 @@ const Home: NextPage = () => {
       <NewsLetter
         heading="NEWSLETTER"
         message="Subscribe to our product newsletter to get notified when we launch the product or when we completed a milestone."
+      />
+      <Contact
+        formTitle="GET IN TOUCH"
+        email="carbbykid@gmail.com"
+        firstPhoneNumber="0975113113"
+        secondPhoneNumber="0975114114"
+        address="523 Sylvan Ave, 5th Floor Mountain View, CA 94041USA"
       />
     </div>
   );

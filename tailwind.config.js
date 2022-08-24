@@ -13,6 +13,9 @@ module.exports = {
         "chipo-gray-blur": "#eee",
         "chipo-orange": "#f62",
       },
+      backgroundImage: {
+        "contact-bg": "url('/images/home/mobile-ap-bg.jpeg')",
+      },
     },
   },
   plugins: [],

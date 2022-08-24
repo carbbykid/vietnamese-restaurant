@@ -1,3 +1,5 @@
+import Axios from "config/Axios";
+import { useState } from "react";
 import { FaChevronRight, FaLock } from "react-icons/fa";
 
 const NewsLetter = ({
@@ -7,9 +9,18 @@ const NewsLetter = ({
   heading: string;
   message: string;
 }): JSX.Element => {
-  const handleSubmit = (e: any) => {
+  const [email, setEmail] = useState<string>("");
+
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log("onSubmit");
+    Axios.post("/newsletter", {
+      email: email,
+      createdAt: new Date().toString(),
+    });
+  };
+
+  const handleEmail = (e: any) => {
+    setEmail(e.target.value);
   };
 
   return (
@@ -30,6 +41,8 @@ const NewsLetter = ({
                 type="text"
                 className="font-[19px] leading-[80px] px-[38px] w-full bg-white"
                 placeholder="Enter Your Email Address"
+                value={email}
+                onChange={handleEmail}
               />
               <button
                 className="bg-chipo-blue py-[10px] px-[40px] hover:bg-chipo-text ease-in duration-200"

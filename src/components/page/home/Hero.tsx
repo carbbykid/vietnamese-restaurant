@@ -24,10 +24,10 @@ const Hero = ({
           </p>
           <button
             onClick={() => setActiveModal(!activeModal)}
-            className="flex m-auto items-center py-2 px-8 text-[16px] sm:text-[27px] text-white rounded-[60px] bg-chipo-blue ease-in duration-300 hover:bg-chipo-heading sm:px-10"
+            className="flex m-auto items-center text-[16px] sm:text-[27px] px-[85px] font-medium leading-[72px] text-white rounded-[60px] bg-chipo-blue ease-in duration-300 hover:bg-chipo-heading sm:px-10"
           >
             Play
-            <FaRegPlayCircle className=" text-[16px] sm:text-[27px] mx-2" />
+            <FaRegPlayCircle className=" text-[16px] sm:text-[43px] mx-[15px]" />
             video
           </button>
           <img

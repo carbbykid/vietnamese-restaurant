@@ -30,12 +30,10 @@ const Collection = ({
             spaceBetween={5}
             slidesPerView={4}
             pagination={{ clickable: true }}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
             className="swiper_custom"
           >
-            {mockData.map((product) => (
-              <SwiperSlide>
+            {mockData.map((product, idx) => (
+              <SwiperSlide key={idx}>
                 <ProductDetail product={product} />
               </SwiperSlide>
             ))}
