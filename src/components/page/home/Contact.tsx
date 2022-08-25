@@ -1,12 +1,31 @@
+import FormInput from "components/common/FormInput";
 import Axios from "config/Axios";
 import { useState } from "react";
-import {
-  FaChevronRight,
-  FaLock,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+import { FaLock, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+
+type Contact = {
+  formTitle: string;
+  address: string;
+  firstPhoneNumber: string;
+  secondPhoneNumber?: string;
+  email: string;
+};
+
+export type FormValue = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
+
+type nameType = keyof FormValue;
+
+const initForm = {
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+};
 
 const Contact = ({
   formTitle,
@@ -14,15 +33,11 @@ const Contact = ({
   firstPhoneNumber,
   secondPhoneNumber,
   email,
-}: {
-  formTitle: string;
-  address: string;
-  firstPhoneNumber: string;
-  secondPhoneNumber?: string;
-  email: string;
-}): JSX.Element => {
-  const [isDisplayForm, setIsDisplayForm] = useState(false);
-  const [formContact, setFormContact] = useState();
+}: Contact): JSX.Element => {
+  const [isDisplayForm, setIsDisplayForm] = useState(true);
+  const [formContact, setFormContact] = useState<FormValue>(initForm);
+
+  console.log("formContact:", formContact);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -33,71 +48,107 @@ const Contact = ({
   };
 
   const handleFormContact = (e: any) => {
-    // setFormContact({...formContact, e.target.value});
+    setFormContact((prev: any) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
   };
 
   return (
-    <div className="bg-contact-bg pb-[160px] pt-[110px]">
-      <div className="wrap-content">
-        <div className="w-[555px] bg-white px-[40px] pt-[38px] pb-[34px] m-auto">
-          <h2 className="font-bold tracking-tighter sm:text-[27px] text-chipo-heading">
-            {formTitle}
-          </h2>
-          <div className="pt-[25px] pb-[30px] leading-[26px] text-[16px]">
-            <div className="flex items-center">
-              <FaMapMarkerAlt className="inline mr-[4px]" />
-              {address}
-            </div>
-            <div className="py-[10px] flex">
-              <FaPhoneAlt className="inline mr-[4px]" />
-              <div>
-                {firstPhoneNumber} {secondPhoneNumber && <br />}
-                {secondPhoneNumber}
+    <div
+      id="contact"
+      className="h-[80vh] relative bg-contact-bg bg-cover pb-[160px] pt-[110px] before:content-[''] before:absolute before:backdrop-blur-sm before:w-full before:h-full before:top-0 before:left-0"
+    >
+      <div className="wrap-content relative z-2 w-full h-full flip-card ">
+        <div className="relative w-full h-full flip-card-inner">
+          {/* front */}
+          <div className="form-contact-wrap back-face">
+            <h2 className="font-bold tracking-tighter sm:text-[27px] text-chipo-heading">
+              {formTitle}
+            </h2>
+            <div className="pt-[25px] pb-[30px] leading-[26px] text-[16px]">
+              <div className="flex items-center">
+                <FaMapMarkerAlt className="inline mr-[4px]" />
+                {address}
+              </div>
+              <div className="py-[10px] flex">
+                <FaPhoneAlt className="inline mr-[4px]" />
+                <div>
+                  {firstPhoneNumber} {secondPhoneNumber && <br />}
+                  {secondPhoneNumber}
+                </div>
+              </div>
+              <div className="flex items-center">
+                <FaEnvelope className="inline mr-[4px]" />
+                {email}
               </div>
             </div>
-            <div className="flex items-center">
-              <FaEnvelope className="inline mr-[4px]" />
-              {email}
-            </div>
+            <button
+              onClick={() => setIsDisplayForm((prev) => !prev)}
+              className="sm:text-[19px] px-[33px] w-full leading-[63px] font-semibold text-white bg-chipo-blue ease-in duration-300 hover:bg-chipo-heading"
+            >
+              CONTACT US
+            </button>
           </div>
-          <button
-            onClick={() => setIsDisplayForm((prev) => !prev)}
-            className="sm:text-[19px] px-[33px] w-full leading-[63px] font-semibold text-white bg-chipo-blue ease-in duration-300 hover:bg-chipo-heading"
-          >
-            CONTACT US
-          </button>
-        </div>
 
-        {isDisplayForm && (
-          <div className="text-center">
-            <form onSubmit={handleSubmit} className="max-w-[750px] m-auto">
-              <div className="flex">
-                <input
-                  type="text"
-                  className="font-[19px] leading-[80px] px-[38px] w-full bg-white"
-                  placeholder="Enter Your Email Address"
-                  value={email}
+          {/* back */}
+          <div className="form-contact-wrap flip-card-back back-face">
+            <form onSubmit={handleSubmit}>
+              {inputs.map((input, idx) => (
+                <FormInput
+                  key={idx}
+                  {...input}
+                  value={formContact[input.name as nameType]}
                   onChange={handleFormContact}
+                  className="w-full text-[17px] leading-[24px] px-[18px] py-[12px] font-light mb-[34px] border border-['#e0e8ee'] text-['#555'] bg-chipo-bg-second rounded-[4px]"
                 />
-                <button
-                  className="bg-chipo-blue py-[10px] px-[40px] hover:bg-chipo-text ease-in duration-200"
-                  type="submit"
-                >
-                  <FaChevronRight className="text-[30px] text-white" />
-                </button>
-              </div>
+              ))}
+
+              <button
+                onClick={() => setIsDisplayForm((prev) => !prev)}
+                className="sm:text-[19px] px-[33px] w-full leading-[63px] font-semibold text-white bg-chipo-blue ease-in duration-300 hover:bg-chipo-heading"
+                type="submit"
+              >
+                SEND MESSAGE
+              </button>
             </form>
-            <div className="mt-[22px]">
-              <div className="flex items-center justify-center">
-                <FaLock className="inline mr-[8px]" />
-                No Spam. We Promise. Unsubscribe anytime.
-              </div>
-            </div>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
 };
 
 export default Contact;
+
+const inputs = [
+  {
+    name: "name",
+    type: "text",
+    placeholder: "Name",
+    required: true,
+    errorMessage: "This field is required.",
+  },
+  {
+    name: "email",
+    type: "email",
+    placeholder: "Email Address",
+    required: true,
+    errorMessage: "This field is required.",
+  },
+  {
+    name: "subject",
+    type: "text",
+    placeholder: "Subject",
+    required: true,
+    errorMessage: "This field is required.",
+  },
+  {
+    name: "message",
+    type: "text",
+    placeholder: "Message",
+    required: true,
+    types: "textarea",
+    errorMessage: "This field is required.",
+  },
+];

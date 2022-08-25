@@ -57,10 +57,10 @@ const Header = (): JSX.Element => {
             <Link href="/#product">Product</Link>
           </li>
           <li className="p-4 hover:text-chipo-heading ease-in duration-200">
-            <Link href="/work">Work</Link>
+            <Link href="#contact">Contact</Link>
           </li>
           <li className="p-4 hover:text-chipo-heading ease-in duration-200">
-            <Link href="/contact">Contact</Link>
+            <Link href="/blog">Blog</Link>
           </li>
         </ul>
 
