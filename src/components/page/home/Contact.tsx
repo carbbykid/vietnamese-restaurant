@@ -1,7 +1,12 @@
 import FormInput from "components/common/FormInput";
 import Axios from "config/Axios";
 import { useState } from "react";
-import { FaLock, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaTimes,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
 type Contact = {
   formTitle: string;
@@ -34,10 +39,8 @@ const Contact = ({
   secondPhoneNumber,
   email,
 }: Contact): JSX.Element => {
-  const [isDisplayForm, setIsDisplayForm] = useState(true);
+  const [isDisplayForm, setIsDisplayForm] = useState(false);
   const [formContact, setFormContact] = useState<FormValue>(initForm);
-
-  console.log("formContact:", formContact);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -59,10 +62,14 @@ const Contact = ({
       id="contact"
       className="h-[80vh] relative bg-contact-bg bg-cover pb-[160px] pt-[110px] before:content-[''] before:absolute before:backdrop-blur-sm before:w-full before:h-full before:top-0 before:left-0"
     >
-      <div className="wrap-content relative z-2 w-full h-full flip-card ">
-        <div className="relative w-full h-full flip-card-inner">
+      <div className="flip-card">
+        <div
+          className={`flip-card-inner ${
+            isDisplayForm ? "flip-card-rotate" : ""
+          }`}
+        >
           {/* front */}
-          <div className="form-contact-wrap back-face">
+          <div className="form-contact-wrap flip-card-front">
             <h2 className="font-bold tracking-tighter sm:text-[27px] text-chipo-heading">
               {formTitle}
             </h2>
@@ -92,7 +99,7 @@ const Contact = ({
           </div>
 
           {/* back */}
-          <div className="form-contact-wrap flip-card-back back-face">
+          <div className="form-contact-wrap flip-card-back">
             <form onSubmit={handleSubmit}>
               {inputs.map((input, idx) => (
                 <FormInput
@@ -105,16 +112,75 @@ const Contact = ({
               ))}
 
               <button
-                onClick={() => setIsDisplayForm((prev) => !prev)}
                 className="sm:text-[19px] px-[33px] w-full leading-[63px] font-semibold text-white bg-chipo-blue ease-in duration-300 hover:bg-chipo-heading"
                 type="submit"
               >
                 SEND MESSAGE
               </button>
             </form>
+            <FaTimes
+              className="absolute top-0 right-0 text-[18px] mx-[10px] my-[10px] hover:text-chipo-text cursor-pointer"
+              onClick={() => setIsDisplayForm((prev) => !prev)}
+            />
           </div>
         </div>
       </div>
+      {/* <div className="wrap-content w-full h-full flip-card">
+        <div className="relative w-full h-full flip-card-inner"> */}
+      {/* front */}
+      {/* <div className="form-contact-wrap back-face">
+            <h2 className="font-bold tracking-tighter sm:text-[27px] text-chipo-heading">
+              {formTitle}
+            </h2>
+            <div className="pt-[25px] pb-[30px] leading-[26px] text-[16px]">
+              <div className="flex items-center">
+                <FaMapMarkerAlt className="inline mr-[4px]" />
+                {address}
+              </div>
+              <div className="py-[10px] flex">
+                <FaPhoneAlt className="inline mr-[4px]" />
+                <div>
+                  {firstPhoneNumber} {secondPhoneNumber && <br />}
+                  {secondPhoneNumber}
+                </div>
+              </div>
+              <div className="flex items-center">
+                <FaEnvelope className="inline mr-[4px]" />
+                {email}
+              </div>
+            </div>
+            <button
+              onClick={() => setIsDisplayForm((prev) => !prev)}
+              className="sm:text-[19px] px-[33px] w-full leading-[63px] font-semibold text-white bg-chipo-blue ease-in duration-300 hover:bg-chipo-heading"
+            >
+              CONTACT US
+            </button>
+          </div> */}
+
+      {/* back */}
+      {/* <div className="form-contact-wrap flip-card-back back-face">
+        <form onSubmit={handleSubmit}>
+          {inputs.map((input, idx) => (
+            <FormInput
+              key={idx}
+              {...input}
+              value={formContact[input.name as nameType]}
+              onChange={handleFormContact}
+              className="w-full text-[17px] leading-[24px] px-[18px] py-[12px] font-light mb-[34px] border border-['#e0e8ee'] text-['#555'] bg-chipo-bg-second rounded-[4px]"
+            />
+          ))}
+
+          <button
+            onClick={() => setIsDisplayForm((prev) => !prev)}
+            className="sm:text-[19px] px-[33px] w-full leading-[63px] font-semibold text-white bg-chipo-blue ease-in duration-300 hover:bg-chipo-heading"
+            type="submit"
+          >
+            SEND MESSAGE
+          </button>
+        </form>
+      </div> */}
+      {/* </div>
+      </div> */}
     </div>
   );
 };

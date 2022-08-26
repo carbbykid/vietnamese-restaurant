@@ -1,0 +1,33 @@
+import Products from "components/page/blog/Products";
+import Collection from "components/page/home/Collection";
+import Contact from "components/page/home/Contact";
+import NewsLetter from "components/page/home/NewsLetter";
+import type { NextPage } from "next";
+import Head from "next/head";
+
+const Blog: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>ChiPoPo</title>
+        <meta name="description" content="I'm Front-end developer" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <Products heading="Products list" />
+      <NewsLetter
+        heading="NEWSLETTER"
+        message="Subscribe to our product newsletter to get notified when we launch the product or when we completed a milestone."
+      />
+      <Contact
+        formTitle="GET IN TOUCH"
+        email="carbbykid@gmail.com"
+        firstPhoneNumber="0975113113"
+        secondPhoneNumber="0975114114"
+        address="523 Sylvan Ave, 5th Floor Mountain View, CA 94041USA"
+      />
+    </div>
+  );
+};
+
+export default Blog;
