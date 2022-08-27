@@ -1,13 +1,4 @@
 @import "./variable.scss";
-@import "./utils.scss";
-
-@font-face {
-  font-family: "orqquidea";
-  font-weight: 400;
-  font-style: normal;
-  src: url("../fonts/orqquidea.otf");
-  font-display: swap;
-}
 
 html {
   scroll-behavior: smooth;
@@ -32,7 +23,7 @@ body {
 
 #__next {
   width: 100%;
-  background: linear-gradient(180deg, #00261c 0%, #384a42 100%);
+  background: #fff;
   overflow-x: hidden;
 }
 
