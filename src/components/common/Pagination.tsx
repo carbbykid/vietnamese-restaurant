@@ -1,35 +1,32 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
-const Pagination = (): JSX.Element => {
-  const [isInFirstPage, setIsInFirstPage] = useState(false);
-  const [isInLastPage, setIsInLastPage] = useState();
-  const [currentPage, setCurrentPage] = useState();
-  const [totalPages, setTotalPages] = useState<number>();
-  const [maxVisibleButtons, setmaxVisibleButtons] = useState<number>();
+type Pagination = {
+  totalPages: number;
+  currentPage: number;
+  maxVisibleButtons: number;
+  onPageChanged: (e: any) => void;
+};
+const Pagination = ({
+  totalPages,
+  currentPage,
+  maxVisibleButtons,
+  onPageChanged,
+}: Pagination): JSX.Element => {
+  const [pages, setPages] = useState<JSX.Element[] | null>();
 
-  const pages = useRef<JSX.Element[]>(null);
+  const isInFirstPage = (): boolean => {
+    return currentPage === 1;
+  };
 
-  useEffect(() => {
-    for (let i = startPage(); i <= endPage(); i++) {
-      pages.current?.push(
-        <li key={i} className="pagination-item">
-          {/* <button
-            onClick={() => {
-              onClickPage(i);
-            }}
-            className={isPageActive(i) ? "active" : ""}
-          >
-            {i}
-          </button> */}
-        </li>,
-      );
+  const isInLastPage = (): boolean => {
+    if (totalPages === 0) {
+      return true;
     }
-  }, []);
+    return currentPage === totalPages;
+  };
 
   //start page
-  const startPage = (): number => {
-    if (!totalPages || !maxVisibleButtons || !currentPage) return 1;
-
+  const startPage = useCallback((): number => {
     if (currentPage === 1) {
       // When on the first page
       return 1;
@@ -39,48 +36,89 @@ const Pagination = (): JSX.Element => {
     if (totalPages < maxVisibleButtons) {
       return 1;
     }
-    if (currentPage === totalPages) {
-      return totalPages - maxVisibleButtons + 1;
-    }
 
+    //When on the near last page and can't jump
+    if (currentPage + Math.floor(maxVisibleButtons / 2) > totalPages)
+      return (
+        currentPage -
+        Math.floor(maxVisibleButtons / 2) +
+        (totalPages - (currentPage + Math.floor(maxVisibleButtons / 2)))
+      );
+
+    if (currentPage - Math.floor(maxVisibleButtons / 2) < 1) return 1;
     // When in between
-    return currentPage - 1;
-  };
+    return currentPage - Math.floor(maxVisibleButtons / 2);
+  }, [currentPage, maxVisibleButtons, totalPages]);
 
   //end page
-  const endPage = () => {
-    if (!totalPages || !maxVisibleButtons) {
-      return 1;
-    }
+  const endPage = useCallback(() => {
     if (totalPages < maxVisibleButtons) {
       return totalPages;
     }
     return Math.min(startPage() + maxVisibleButtons - 1, totalPages);
-  };
+  }, [maxVisibleButtons, startPage, totalPages]);
 
   const onClickFirstPage = () => {
-    console.log("onClickFirstPage");
-  };
-  const onClickPreviousPage = () => {
-    console.log("onClickPreviousPage");
+    if (currentPage === 1) return;
+    return onPageChanged(1);
   };
 
+  const onClickPreviousPage = () => {
+    if (currentPage === 1) return;
+    return onPageChanged(currentPage - 1);
+  };
+
+  const onClickPage = useCallback(
+    (page: number) => {
+      onPageChanged(page);
+    },
+    [onPageChanged],
+  );
+
   const onClickLastPage = () => {
-    console.log("onClickLastPage");
+    if (currentPage === totalPages) return;
+    return onPageChanged(totalPages);
   };
 
   const onClickNextPage = () => {
-    console.log("onClickNextPage");
+    if (currentPage === totalPages) return;
+    return onPageChanged(currentPage + 1);
   };
+
+  const isPageActive = useCallback(
+    (page: number) => {
+      return currentPage === page;
+    },
+    [currentPage],
+  );
+
+  useEffect(() => {
+    const pagesTerm = [];
+    for (let i = startPage(); i <= endPage(); i++) {
+      pagesTerm.push(
+        <li key={i} className="pagination-item">
+          <button
+            onClick={() => {
+              onClickPage(i);
+            }}
+            className={`${isPageActive(i) ? "active" : ""} rounded-button`}
+          >
+            {i}
+          </button>
+        </li>,
+      );
+    }
+    setPages(pagesTerm);
+  }, [endPage, isPageActive, onClickPage, startPage]);
 
   return (
     <div>
-      <ul>
-        <li>
+      <ul className="flex items-center justify-center">
+        <li className="pagination-item">
           <button
-            onClick={() => onClickFirstPage()}
-            className={isInFirstPage ? "disabled" : ""}
-            disabled={isInFirstPage}
+            onClick={onClickFirstPage}
+            className={isInFirstPage() ? "disabled" : ""}
+            disabled={isInFirstPage()}
           >
             First
           </button>
@@ -88,28 +126,28 @@ const Pagination = (): JSX.Element => {
 
         <li className="pagination-item">
           <button
-            onClick={() => onClickPreviousPage()}
-            className={isInFirstPage ? "disabled" : ""}
-            disabled={isInFirstPage}
+            onClick={onClickPreviousPage}
+            className={`${isInFirstPage() ? "disabled" : ""}`}
+            disabled={isInFirstPage()}
           >
             «
           </button>
         </li>
-        {/* {pages} */}
+        {pages}
         <li className="pagination-item">
           <button
-            onClick={() => onClickNextPage()}
-            className={isInLastPage ? "disabled" : ""}
-            disabled={isInLastPage}
+            onClick={onClickNextPage}
+            className={`${isInLastPage() ? "disabled" : ""}`}
+            disabled={isInLastPage()}
           >
             »
           </button>
         </li>
         <li className="pagination-item">
           <button
-            onClick={() => onClickLastPage()}
-            className={isInLastPage ? "disabled" : ""}
-            disabled={isInLastPage}
+            onClick={onClickLastPage}
+            className={isInLastPage() ? "disabled" : ""}
+            disabled={isInLastPage()}
           >
             Last
           </button>

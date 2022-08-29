@@ -1,5 +1,5 @@
+import Pagination from "components/common/Pagination";
 import Products from "components/page/blog/Products";
-import Collection from "components/page/home/Collection";
 import Contact from "components/page/home/Contact";
 import NewsLetter from "components/page/home/NewsLetter";
 import type { NextPage } from "next";
@@ -15,6 +15,7 @@ const Blog: NextPage = () => {
       </Head>
 
       <Products heading="Products list" />
+
       <NewsLetter
         heading="NEWSLETTER"
         message="Subscribe to our product newsletter to get notified when we launch the product or when we completed a milestone."
