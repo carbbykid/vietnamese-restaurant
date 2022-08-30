@@ -1,30 +1,32 @@
 import Pagination from "components/common/Pagination";
-import { useCallback, useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import ProductDetail from "../home/ProductDetail";
 
+const recordsPerPage = 9;
+
 const Products = ({ heading }: { heading: string }): JSX.Element => {
-  const [page, setPage] = useState<number>(1);
-  const [totalPages, setTotalPages] = useState<number>(0);
-  const [recordsPerPage, setRecordPerPage] = useState(9);
   const [listItems, setListItems] = useState<any>([]);
 
-  const onPageChanged = (e: any) => {
-    setPage(e);
-    loadListItem();
-  };
+  const router = useRouter();
+  const page = useMemo(
+    () => Number(router.query.page) || 1,
+    [router.query.page],
+  );
+  const totalPages = Math.ceil(mockData.length / recordsPerPage);
 
   const loadListItem = useCallback(() => {
-    setTotalPages(Math.floor(mockData.length / recordsPerPage));
-    setListItems(handleDataOnPage(page, recordsPerPage));
-  }, [page, recordsPerPage]);
+    setListItems(generateDataOnPage(page, recordsPerPage));
+  }, [page]);
 
-  const handleDataOnPage = (page: number, size: number) => {
+  const generateDataOnPage = (page: number, size: number) => {
     const offset = (page - 1) * size;
-    const data = [];
-    for (let i = offset; i < offset + size; i++) {
-      data.push(mockData[i]);
+
+    if (offset + size > mockData.length) {
+      return mockData.slice(offset, mockData.length);
+    } else {
+      return mockData.slice(offset, offset + size);
     }
-    return data;
   };
 
   useEffect(() => {
@@ -52,9 +54,8 @@ const Products = ({ heading }: { heading: string }): JSX.Element => {
           {listItems.length > 0 && (
             <Pagination
               totalPages={totalPages}
-              currentPage={page}
               maxVisibleButtons={3}
-              onPageChanged={(e: any) => onPageChanged(e)}
+              recordsPerPage={recordsPerPage}
             />
           )}
         </div>
@@ -71,7 +72,7 @@ const mockData = [
     alt: "collection-1",
     name: "Connect Device",
     desc: "The FirstWatch ever released",
-    price: "100$",
+    price: "50$",
   },
   {
     src: "https://demo.web3canvas.com/themeforest/proland/images/collection-2.jpg",

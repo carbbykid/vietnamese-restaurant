@@ -1,18 +1,22 @@
-import { useCallback, useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useMemo, useState } from "react";
 
 type Pagination = {
   totalPages: number;
-  currentPage: number;
   maxVisibleButtons: number;
-  onPageChanged: (e: any) => void;
+  recordsPerPage: number;
 };
 const Pagination = ({
   totalPages,
-  currentPage,
   maxVisibleButtons,
-  onPageChanged,
+  recordsPerPage,
 }: Pagination): JSX.Element => {
   const [pages, setPages] = useState<JSX.Element[] | null>();
+  const router = useRouter();
+  const currentPage = useMemo(
+    () => Number(router.query.page) || 1,
+    [router.query],
+  );
 
   const isInFirstPage = (): boolean => {
     return currentPage === 1;
@@ -26,7 +30,7 @@ const Pagination = ({
   };
 
   //start page
-  const startPage = useCallback((): number => {
+  const startPage = (): number => {
     if (currentPage === 1) {
       // When on the first page
       return 1;
@@ -48,15 +52,15 @@ const Pagination = ({
     if (currentPage - Math.floor(maxVisibleButtons / 2) < 1) return 1;
     // When in between
     return currentPage - Math.floor(maxVisibleButtons / 2);
-  }, [currentPage, maxVisibleButtons, totalPages]);
+  };
 
   //end page
-  const endPage = useCallback(() => {
+  const endPage = () => {
     if (totalPages < maxVisibleButtons) {
       return totalPages;
     }
     return Math.min(startPage() + maxVisibleButtons - 1, totalPages);
-  }, [maxVisibleButtons, startPage, totalPages]);
+  };
 
   const onClickFirstPage = () => {
     if (currentPage === 1) return;
@@ -65,34 +69,17 @@ const Pagination = ({
 
   const onClickPreviousPage = () => {
     if (currentPage === 1) return;
-    return onPageChanged(currentPage - 1);
+    return onPageChanged(+currentPage - 1);
   };
 
-  const onClickPage = useCallback(
-    (page: number) => {
-      onPageChanged(page);
-    },
-    [onPageChanged],
-  );
-
-  const onClickLastPage = () => {
-    if (currentPage === totalPages) return;
-    return onPageChanged(totalPages);
+  const onPageChanged = (e: number) => {
+    router.replace({ query: { page: e, size: recordsPerPage } }, undefined, {
+      scroll: false,
+      shallow: true,
+    });
   };
 
-  const onClickNextPage = () => {
-    if (currentPage === totalPages) return;
-    return onPageChanged(currentPage + 1);
-  };
-
-  const isPageActive = useCallback(
-    (page: number) => {
-      return currentPage === page;
-    },
-    [currentPage],
-  );
-
-  useEffect(() => {
+  const generatePages = () => {
     const pagesTerm = [];
     for (let i = startPage(); i <= endPage(); i++) {
       pagesTerm.push(
@@ -109,7 +96,31 @@ const Pagination = ({
       );
     }
     setPages(pagesTerm);
-  }, [endPage, isPageActive, onClickPage, startPage]);
+  };
+
+  const onClickPage = (page: number) => {
+    onPageChanged(page);
+  };
+
+  const onClickLastPage = () => {
+    if (currentPage === totalPages) return;
+    return onPageChanged(totalPages);
+  };
+
+  const onClickNextPage = () => {
+    if (currentPage === totalPages) return;
+    return onPageChanged(+currentPage + 1);
+  };
+
+  const isPageActive = (page: number) => {
+    return currentPage === page;
+  };
+
+  useEffect(() => {
+    generatePages();
+    //because props be call in generatePages function so it is new values. so It doesn't need dependency in use Effect
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPage]);
 
   return (
     <div>
