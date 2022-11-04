@@ -15,6 +15,8 @@ module.exports = {
       },
       backgroundImage: {
         "contact-bg": "url('/images/home/mobile-ap-bg.jpeg')",
+        "hero-shop": "url('/images/shop/bg-shop.png')",
+        "hero-home": "url('/images/home/hero-background.jpeg')",
       },
     },
   },

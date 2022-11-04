@@ -12,10 +12,10 @@ const Hero = ({
   const [activeModal, setActiveModal] = useState<boolean>(false);
 
   return (
-    <div className="custom-img bg-no-repeat bg-cover bg-bottom bg-fixed">
+    <div className="bg-hero-home bg-no-repeat bg-cover bg-bottom bg-fixed">
       <div className="flex items-center justify-center h-screen mb-12 max-w-[1170px] m-auto">
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/20 z-[2] mt-[-10rem]" />
-        <div className="px-5 pt-5 m-auto text-center text-chipo-heading sm:w-9/12 z-[2]">
+        <div className="relative px-5 pt-5 m-auto text-center text-chipo-heading sm:w-9/12 z-[2]">
           <h2 className="text-4xl font-bold tracking-tighter sm:text-7xl text-chipo-heading">
             {heading}
           </h2>

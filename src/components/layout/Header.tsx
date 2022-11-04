@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { FaHeart, FaShoppingBag } from "react-icons/fa";
 
 const Header = (): JSX.Element => {
   const [nav, setNav] = useState(false);
@@ -31,13 +32,13 @@ const Header = (): JSX.Element => {
       }`}
     >
       <div
-        className={`max-w-[1240px] m-auto flex justify-between items-center text-white ease-in duration-200 ${
+        className={`max-w-[1240px] m-auto flex gap-5 justify-between items-center text-white ease-in duration-200 ${
           isScroll ? "p-4" : "p-4 pt-6 pb-6"
         }`}
       >
         <Link href="/">
           <h1
-            className={`font-bold cursor-pointer ease-in duration-200 hover:text-chipo-heading ${
+            className={`font-bold cursor-pointer ease-in duration-200 hover:text-chipo-heading hover:scale-105 ${
               isScroll ? "text-chipo-heading text-3xl" : "text-white text-4xl"
             }`}
           >
@@ -46,24 +47,36 @@ const Header = (): JSX.Element => {
         </Link>
 
         <ul
-          className={`hidden sm:flex font-["rubikdirt"] ease-in duration-200 ${
+          className={`hidden sm:flex sm:flex-1 justify-center font-["rubikdirt"] ease-in duration-200 ${
             isScroll ? "text-chipo-heading" : "text-white"
           }`}
         >
-          <li className="p-4 hover:text-chipo-heading ease-in duration-200">
+          <li className="p-4 hover:text-chipo-heading hover:scale-105 ease-in duration-200">
             <Link href="/">Home</Link>
           </li>
-          <li className="p-4 hover:text-chipo-heading ease-in duration-200">
+          <li className="p-4 hover:text-chipo-heading hover:scale-105 ease-in duration-200">
             <Link href="/#product">Product</Link>
           </li>
-          <li className="p-4 hover:text-chipo-heading ease-in duration-200">
+          <li className="p-4 hover:text-chipo-heading hover:scale-105 ease-in duration-200">
             <Link href="#contact">Contact</Link>
           </li>
-          <li className="p-4 hover:text-chipo-heading ease-in duration-200">
-            <Link href="/blog">Blog</Link>
+          <li className="p-4 hover:text-chipo-heading hover:scale-105 ease-in duration-200">
+            <Link href="/shop">Shop</Link>
           </li>
         </ul>
 
+        <div className="text-[25px] text-chipo-heading flex gap-5 items-center justify-center">
+          <span className="hover:scale-105 duration-200 cursor-pointer">
+            <FaHeart />
+          </span>
+          <span className="hover:scale-105 duration-200 cursor-pointer">
+            <FaShoppingBag />
+          </span>
+        </div>
+
+        <div className="w-[40px] h-[40px] cursor-pointer hover:scale-105 duration-200">
+          <img src="/images/shop/user-icon.png" alt="chipo" />
+        </div>
         {/* Mobile Button */}
         <div
           onClick={handleNav}
