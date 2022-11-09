@@ -21,7 +21,9 @@ const SortBy = () => {
         id="sort-category"
         className="px-4 py-2 w-full text-black bg-chipo-gray-blur rounded-md outline-none"
       >
-        <option value="">Sort By</option>
+        <option value="" disabled>
+          Sort By
+        </option>
         <option value="low">Low Price</option>
         <option value="high">High Price</option>
         <option value="popular">Popular</option>

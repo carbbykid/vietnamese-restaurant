@@ -13,7 +13,7 @@ const Collection = ({
   message: string;
 }): JSX.Element => {
   return (
-    <div className="bg-white pb-[160px] pt-[110px]">
+    <div className="bg-white pb-[160px] pt-[110px]" id="collection">
       <div className="wrap-content">
         <div className="mb-[50px]">
           <h2 className="text-xl font-bold tracking-tighter mb-[20px] sm:text-5xl text-center text-chipo-heading">

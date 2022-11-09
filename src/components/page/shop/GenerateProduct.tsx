@@ -10,7 +10,7 @@ const GenerateProduct = () => {
   const { outputData } = useContext(
     ProductListContext,
   ) as ProductListContextType;
-  console.log("data before generate:", outputData);
+
   return (
     <div>
       <div className="grid grid-cols-4 gap-5">

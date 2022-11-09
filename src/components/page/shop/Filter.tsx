@@ -21,7 +21,9 @@ const Filter = () => {
         id="filter-category"
         className="px-4 py-2 text-black w-full bg-chipo-gray-blur rounded-md outline-none"
       >
-        <option value="">Filter by category</option>
+        <option value="" disabled>
+          Filter by category
+        </option>
         <option value="sofa">Sofa</option>
         <option value="mobile">Mobile</option>
         <option value="chair">Chair</option>

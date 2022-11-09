@@ -1,38 +1,38 @@
-import productImg01 from "../../public/images/shop/double-sofa-01.png";
-import productImg02 from "../../public/images/shop/double-sofa-02.png";
-import productImg03 from "../../public/images/shop/double-sofa-03.png";
+// import productImg01 from "../../public/images/shop/double-sofa-01.png";
+// import productImg02 from "../../public/images/shop/double-sofa-02.png";
+// import productImg03 from "../../public/images/shop/double-sofa-03.png";
 
-import productImg04 from "../../public/images/shop/single-sofa-01.jpg";
-import productImg05 from "../../public/images/shop/single-sofa-02.jpg";
-import productImg06 from "../../public/images/shop/single-sofa-03.jpg";
-import productImg007 from "../../public/images/shop/single-sofa-04.png";
+// import productImg04 from "../../public/images/shop/single-sofa-01.jpg";
+// import productImg05 from "../../public/images/shop/single-sofa-02.jpg";
+// import productImg06 from "../../public/images/shop/single-sofa-03.jpg";
+// import productImg007 from "../../public/images/shop/single-sofa-04.png";
 
-import productImg07 from "../../public/images/shop/arm-chair-01.jpg";
-import productImg08 from "../../public/images/shop/arm-chair-02.jpg";
-import productImg09 from "../../public/images/shop/arm-chair-03.jpg";
-import productImg10 from "../../public/images/shop/arm-chair-01.jpg";
+// import productImg07 from "../../public/images/shop/arm-chair-01.jpg";
+// import productImg08 from "../../public/images/shop/arm-chair-02.jpg";
+// import productImg09 from "../../public/images/shop/arm-chair-03.jpg";
+// import productImg10 from "../../public/images/shop/arm-chair-01.jpg";
 
-import productImg13 from "../../public/images/shop/phone-01.jpg";
-import productImg14 from "../../public/images/shop/phone-02.jpg";
-import productImg15 from "../../public/images/shop/phone-03.png";
-import productImg16 from "../../public/images/shop/phone-04.jpg";
-import productImg17 from "../../public/images/shop/phone-05.jpg";
-import productImg18 from "../../public/images/shop/phone-06.jpg";
+// import productImg13 from "../../public/images/shop/phone-01.jpg";
+// import productImg14 from "../../public/images/shop/phone-02.jpg";
+// import productImg15 from "../../public/images/shop/phone-03.png";
+// import productImg16 from "../../public/images/shop/phone-04.jpg";
+// import productImg17 from "../../public/images/shop/phone-05.jpg";
+// import productImg18 from "../../public/images/shop/phone-06.jpg";
 
-import productImg19 from "../../public/images/shop/watch-01.jpg";
-import productImg20 from "../../public/images/shop/watch-02.jpg";
-import productImg21 from "../../public/images/shop/watch-03.jpg";
-import productImg22 from "../../public/images/shop/watch-04.jpg";
+// import productImg19 from "../../public/images/shop/watch-01.jpg";
+// import productImg20 from "../../public/images/shop/watch-02.jpg";
+// import productImg21 from "../../public/images/shop/watch-03.jpg";
+// import productImg22 from "../../public/images/shop/watch-04.jpg";
 
-import productImg23 from "../../public/images/shop/wireless-01.png";
+// import productImg23 from "../../public/images/shop/wireless-01.png";
 
-import productImg25 from "../../public/images/shop/wireless-03.png";
+// import productImg25 from "../../public/images/shop/wireless-03.png";
 
 const products = [
   {
     id: "01",
     productName: "Stone and Beam Westview ",
-    imgUrl: productImg01,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960252/shop/double-sofa-01_bsmfds.png",
     category: "sofa",
     price: 193,
     shortDesc:
@@ -51,7 +51,7 @@ const products = [
   {
     id: "02",
     productName: "Rivet Bigelow Modern ",
-    imgUrl: productImg02,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960252/shop/double-sofa-02_vcybrf.png",
     category: "sofa",
     price: 253,
     shortDesc:
@@ -74,7 +74,7 @@ const products = [
   {
     id: "03",
     productName: "Amazon Brand Modern Sofa",
-    imgUrl: productImg03,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960252/shop/double-sofa-03_woerwm.png",
     category: "sofa",
     price: 173,
     shortDesc:
@@ -96,7 +96,7 @@ const products = [
   {
     id: "26",
     productName: "Rivet Bigelow Modern ",
-    imgUrl: productImg02,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960252/shop/double-sofa-02_vcybrf.png",
     category: "sofa",
     price: 253,
     shortDesc:
@@ -118,7 +118,7 @@ const products = [
   {
     id: "04",
     productName: "Fllufy Sheep Sofa",
-    imgUrl: productImg04,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960256/shop/single-sofa-01_jnvpxv.jpg",
     category: "sofa",
     price: 163,
     shortDesc:
@@ -141,7 +141,7 @@ const products = [
   {
     id: "05",
     productName: "Faux Velvet Sofa",
-    imgUrl: productImg05,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960256/shop/single-sofa-02_fnonfr.jpg",
     category: "sofa",
     price: 163,
     shortDesc:
@@ -164,7 +164,7 @@ const products = [
   {
     id: "06",
     productName: "Fllufy Sheep Sofa",
-    imgUrl: productImg06,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960256/shop/single-sofa-03_gfpu4f.jpg",
     category: "sofa",
     price: 163,
     shortDesc:
@@ -186,7 +186,7 @@ const products = [
   {
     id: "07",
     productName: "Sakarias Armchair",
-    imgUrl: productImg07,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960256/shop/arm-chair-01_imde7l.jpg",
     category: "chair",
     price: 99,
     shortDesc:
@@ -209,7 +209,7 @@ const products = [
   {
     id: "27",
     productName: "Modern Arm Sofa",
-    imgUrl: productImg007,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960253/shop/single-sofa-04_tunrcz.png",
     category: "sofa",
     price: 173,
     shortDesc:
@@ -232,7 +232,7 @@ const products = [
   {
     id: "08",
     productName: "Baltsar Chair",
-    imgUrl: productImg08,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960255/shop/arm-chair-02_ohpgs9.jpg",
     category: "chair",
     price: 89,
     shortDesc:
@@ -255,7 +255,7 @@ const products = [
   {
     id: "09",
     productName: "Helmar Chair",
-    imgUrl: productImg09,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960256/shop/arm-chair-03_xwmjpz.jpg",
     category: "chair",
     price: 112,
     shortDesc:
@@ -278,7 +278,7 @@ const products = [
   {
     id: "10",
     productName: "Apple iPhone 12 Pro",
-    imgUrl: productImg13,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960252/shop/phone-01_qzpzhk.jpg",
     category: "mobile",
     price: 799,
     shortDesc:
@@ -300,7 +300,7 @@ const products = [
   {
     id: "25",
     productName: "Sakarias Armchair",
-    imgUrl: productImg10,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960256/shop/arm-chair-01_imde7l.jpg",
     category: "chair",
     price: 99,
     shortDesc:
@@ -322,7 +322,7 @@ const products = [
   {
     id: "11",
     productName: "Apple iPhone 12 Max",
-    imgUrl: productImg14,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960253/shop/phone-02_nzwd5q.jpg",
     category: "mobile",
     price: 799,
     shortDesc:
@@ -345,7 +345,7 @@ const products = [
   {
     id: "12",
     productName: "Realme 8",
-    imgUrl: productImg15,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960252/shop/phone-03_gv5zfp.png",
     category: "mobile",
     price: 599,
     shortDesc:
@@ -368,7 +368,7 @@ const products = [
   {
     id: "13",
     productName: "One Plus Nord",
-    imgUrl: productImg16,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960253/shop/phone-04_atqjit.jpg",
     category: "mobile",
     price: 799,
     shortDesc:
@@ -391,7 +391,7 @@ const products = [
   {
     id: "14",
     productName: "Apple iPhone 13 Pro",
-    imgUrl: productImg17,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960252/shop/phone-05_jwcd5i.jpg",
     category: "mobile",
     price: 899,
     shortDesc:
@@ -414,7 +414,7 @@ const products = [
   {
     id: "15",
     productName: "Samsung Galaxy S22",
-    imgUrl: productImg18,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960253/shop/phone-06_q4avnb.jpg",
     category: "mobile",
     price: 699,
     shortDesc:
@@ -437,7 +437,7 @@ const products = [
   {
     id: "16",
     productName: "Rolex Watch",
-    imgUrl: productImg19,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960254/shop/watch-01_a3lhti.jpg",
     category: "watch",
     price: 299,
     shortDesc:
@@ -460,7 +460,7 @@ const products = [
   {
     id: "17",
     productName: "Timex Easy Reader Watch",
-    imgUrl: productImg20,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960254/shop/watch-02_spamn2.jpg",
     category: "watch",
     price: 299,
     shortDesc:
@@ -483,7 +483,7 @@ const products = [
   {
     id: "18",
     productName: "Rolex Watch",
-    imgUrl: productImg21,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960254/shop/watch-03_xv4ojd.jpg",
     category: "watch",
     price: 299,
     shortDesc:
@@ -506,7 +506,7 @@ const products = [
   {
     id: "19",
     productName: "Apple Watch",
-    imgUrl: productImg22,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960254/shop/watch-04_ocbhaa.jpg",
     category: "watch",
     price: 399,
     shortDesc:
@@ -529,7 +529,7 @@ const products = [
   {
     id: "20",
     productName: "Beat Studio Wireless",
-    imgUrl: productImg23,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960254/shop/wireless-02_xa15t5.png",
     category: "wireless",
     price: 199,
     shortDesc:
@@ -552,7 +552,7 @@ const products = [
   {
     id: "22",
     productName: "Beat EP Headphones",
-    imgUrl: productImg25,
+    imgUrl: "https://res.cloudinary.com/duv7awivc/image/upload/v1667960254/shop/wireless-03_omhuq7.png",
     category: "wireless",
     price: 199,
     shortDesc:
