@@ -15,7 +15,6 @@ const Shop: NextPage = () => {
       </Head>
 
       <HeroShop product="Products" />
-      {/* <Products heading="Products list" /> */}
       <ProductList />
 
       <NewsLetter
