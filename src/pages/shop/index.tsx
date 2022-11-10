@@ -1,6 +1,3 @@
-import Pagination from "components/common/Pagination";
-import Products from "components/page/shop/Products";
-import Contact from "components/page/home/Contact";
 import NewsLetter from "components/page/home/NewsLetter";
 import type { NextPage } from "next";
 import Head from "next/head";

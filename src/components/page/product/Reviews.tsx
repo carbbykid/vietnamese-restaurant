@@ -17,7 +17,7 @@ const Reviews = ({ reviews }: { reviews: ReviewType[] }) => {
         </div>
       ))}
 
-      <div className="w-[90vh] m-auto mt-14">
+      <div className="w-full md:w-[90vh] m-auto mt-14">
         <form action="">
           <label
             htmlFor="name"

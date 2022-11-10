@@ -7,25 +7,27 @@ const HowItWork = ({
   message: string;
 }): JSX.Element => {
   return (
-    <div className="bg-chipo-bg-second pb-[160px] pt-[110px]">
+    <div className="bg-chipo-bg-second pb-16 md:pb-[160px] pt-10 md:pt-[110px]">
       <div className="wrap-content">
-        <h2 className="text-xl font-bold tracking-tighter mb-[20px] sm:text-5xl text-center text-chipo-heading">
+        <h2 className="text-2xl font-bold tracking-tighter mb-[20px] md:text-5xl text-center text-chipo-heading">
           {heading}
         </h2>
         <div className="message">{message}</div>
-        <div className="mt-[90px] flex gap-[20px] justify-center">
+        <div className="divider mt-2 md:hidden" />
+        <div className="mt-8 md:mt-[90px] md:flex gap-[20px] justify-center">
           {mockData.map((item, idx) => (
-            <div key={idx} className="text-center">
-              <div className="h-[110px] relative">
+            <div key={idx} className="mt-8 md:mt-0 text-center">
+              <div className="md:h-[110px] relative">
                 <img
                   src={item.src}
                   alt={item.alt}
                   className="sm:w-[98px] sm:max-h-[110px] m-auto"
                 />
-                <FaChevronRight className="absolute top-[50%] right-[15px] text-2xl font-light" />
+
+                <FaChevronRight className="rotate-90 md:rotate-0 text-center m-auto mt-4 md:mt-0 md:absolute top-[50%] right-[15px] text-2xl font-light" />
               </div>
 
-              <div className="pt-[60px] pb-[8px] font-semibold sm:text-[26px] text-chipo-heading">
+              <div className="pt-4 md:pt-[60px] pb-[8px] font-semibold sm:text-[26px] text-chipo-heading">
                 {item.heading}
               </div>
               <p className="pb-[10px] text-chipo-text">{item.message}</p>

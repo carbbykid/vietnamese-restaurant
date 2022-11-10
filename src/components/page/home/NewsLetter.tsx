@@ -24,10 +24,10 @@ const NewsLetter = ({
   };
 
   return (
-    <div className="bg-chipo-bg-second pb-[160px] pt-[110px]">
+    <div className="bg-chipo-bg-second pt-14 pb-24 md:pb-[160px] md:pt-[110px]">
       <div className="wrap-content">
-        <div className="mb-[50px]">
-          <h2 className="text-xl font-bold tracking-tighter mb-[20px] sm:text-5xl text-center text-chipo-heading">
+        <div className="mb-16 md:mb-[50px]">
+          <h2 className="text-2xl  font-bold tracking-tighter mb-[20px] md:text-5xl text-center text-chipo-heading">
             {heading}
           </h2>
           <div className="message mb-[20px]">{message}</div>
@@ -39,22 +39,22 @@ const NewsLetter = ({
             <div className="flex">
               <input
                 type="text"
-                className="font-[19px] leading-[80px] px-[38px] w-full bg-white"
+                className="text-[16px] md:text-[19px] leading-[60px] md:leading-[80px] px-6 pd:px-[38px] w-full bg-white"
                 placeholder="Enter Your Email Address"
                 value={email}
                 onChange={handleEmail}
               />
               <button
-                className="bg-chipo-blue py-[10px] px-[40px] hover:bg-chipo-text ease-in duration-200"
+                className="bg-chipo-blue py-2 px-5 md:py-[10px] md:px-[40px] hover:bg-chipo-text ease-in duration-200"
                 type="submit"
               >
-                <FaChevronRight className="text-[30px] text-white" />
+                <FaChevronRight className="text-xl md:text-[30px] text-white" />
               </button>
             </div>
           </form>
           <div className="mt-[22px]">
-            <div className="flex items-center justify-center">
-              <FaLock className="inline mr-[8px]" />
+            <div className="md:flex items-center justify-center">
+              <FaLock className="m-auto mb-2 md:m-0 md:inline md:mr-[8px]" />
               No Spam. We Promise. Unsubscribe anytime.
             </div>
           </div>

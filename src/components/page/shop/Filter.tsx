@@ -19,7 +19,7 @@ const Filter = () => {
         defaultValue=""
         name="filter-category"
         id="filter-category"
-        className="px-4 py-2 text-black w-full bg-chipo-gray-blur rounded-md outline-none"
+        className="px-2 md:px-4 py-2 text-black w-full bg-chipo-gray-blur rounded-md outline-none"
       >
         <option value="" disabled>
           Filter by category

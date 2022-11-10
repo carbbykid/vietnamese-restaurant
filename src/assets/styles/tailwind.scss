@@ -60,11 +60,11 @@
   }
   
   .heading {
-    @apply text-xl font-bold tracking-tighter mb-[20px] sm:text-5xl text-center text-chipo-heading;
+    @apply text-2xl font-bold tracking-tighter mb-[20px] md:text-5xl text-center text-chipo-heading;
   }
 
   .message {
-    @apply max-w-[100%] py-1 text-center m-auto font-light tracking-wide sm:text-xl sm:py-2 sm:max-w-[60%] text-chipo-text;
+    @apply max-w-[100%] py-1 text-center m-auto font-light tracking-wide md:text-xl md:py-2 lg:max-w-[60%] text-chipo-text;
   }
 
   .wrap-content {
@@ -75,6 +75,9 @@
     @apply border-4 border-chipo-gray-blur cursor-pointer hover:border-chipo-text duration-500 w-20 m-auto;
   }
 
+  .modal__video {
+    @apply w-[90vw] h-[300px] md:w-[800px] md:h-[500px]
+  }
   .swiper_custom {
     &.swiper {
       @apply pb-[50px];

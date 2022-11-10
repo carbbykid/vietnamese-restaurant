@@ -1,4 +1,4 @@
-import TableCustom from "components/page/dashboard/TableCustom";
+import TableCustom from "components/common/TableCustom";
 import type { NextPage } from "next";
 import Head from "next/head";
 

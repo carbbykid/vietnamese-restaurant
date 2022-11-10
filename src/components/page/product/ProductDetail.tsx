@@ -11,7 +11,7 @@ const ProductDetail = ({ productId }: { productId: string }) => {
     <div className="wrap-content my-[80px]">
       {product ? (
         <div>
-          <div className="grid grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 items-center">
             <div>
               <img src={product.imgUrl} alt="chipo" />
             </div>

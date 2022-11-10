@@ -13,11 +13,17 @@ const GenerateProduct = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-4 gap-5">
-        {outputData?.map((product) => (
-          <Product key={product.id} product={product as ProductType} />
-        ))}
-      </div>
+      {outputData?.length ? (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-5">
+          {outputData?.map((product) => (
+            <Product key={product.id} product={product as ProductType} />
+          ))}
+        </div>
+      ) : (
+        <div className="h-[50px] mt-8 flex items-center justify-center text-[20px] text-chipo-text text-center">
+          No products are found!
+        </div>
+      )}
     </div>
   );
 };

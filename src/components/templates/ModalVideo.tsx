@@ -65,8 +65,6 @@ const ModalVideo = ({
                 className="modal__video"
                 onLoad={spinner}
                 loading="lazy"
-                width="800"
-                height="500"
                 src="https://player.vimeo.com/video/142705963?enablejsapi=1"
                 title="Vimeo video player"
                 frameBorder="0"

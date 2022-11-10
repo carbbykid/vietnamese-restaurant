@@ -60,7 +60,7 @@ const Contact = ({
   return (
     <div
       id="contact"
-      className="h-[80vh] relative bg-contact-bg bg-cover pb-[160px] pt-[110px] before:content-[''] before:absolute before:backdrop-blur-sm before:w-full before:h-full before:top-0 before:left-0"
+      className="h-[600px] md:h-[800px] relative bg-contact-bg bg-cover pb-14 pt-14 md:pb-[160px] md:pt-[110px] before:content-[''] before:absolute before:backdrop-blur-sm before:w-full before:h-full before:top-0 before:left-0"
     >
       <div className="flip-card">
         <div
@@ -70,7 +70,7 @@ const Contact = ({
         >
           {/* front */}
           <div className="form-contact-wrap flip-card-front">
-            <h2 className="font-bold tracking-tighter sm:text-[27px] text-chipo-heading">
+            <h2 className="font-bold text-xl tracking-tighter md:text-[27px] text-chipo-heading">
               {formTitle}
             </h2>
             <div className="pt-[25px] pb-[30px] leading-[26px] text-[16px]">
@@ -92,7 +92,7 @@ const Contact = ({
             </div>
             <button
               onClick={() => setIsDisplayForm((prev) => !prev)}
-              className="sm:text-[19px] px-[33px] w-full leading-[63px] font-semibold text-white bg-chipo-blue ease-in duration-300 hover:bg-chipo-heading"
+              className="md:text-[19px] px-[33px] w-full leading-[50px] md:leading-[63px] font-semibold text-white bg-chipo-blue ease-in duration-300 hover:bg-chipo-heading"
             >
               CONTACT US
             </button>
@@ -107,12 +107,12 @@ const Contact = ({
                   {...input}
                   value={formContact[input.name as nameType]}
                   onChange={handleFormContact}
-                  className="w-full text-[17px] leading-[24px] px-[18px] py-[12px] font-light mb-[34px] border border-['#e0e8ee'] text-['#555'] bg-chipo-bg-second rounded-[4px]"
+                  className="w-full text-[14px] md:text-[17px] leading-[24px] px-[18px] py-3 md:py-[12px] font-light mb-5 md:mb-[34px] border border-['#e0e8ee'] text-['#555'] bg-chipo-bg-second rounded-[4px]"
                 />
               ))}
 
               <button
-                className="sm:text-[19px] px-[33px] w-full leading-[63px] font-semibold text-white bg-chipo-blue ease-in duration-300 hover:bg-chipo-heading"
+                className="md:text-[19px] md:px-[33px] w-full leading-[50px] md:leading-[63px] font-semibold text-white bg-chipo-blue ease-in duration-300 hover:bg-chipo-heading"
                 type="submit"
               >
                 SEND MESSAGE
