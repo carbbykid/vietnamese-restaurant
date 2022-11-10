@@ -1,4 +1,13 @@
 @import "./variable.scss";
+@import "./tailwind.scss";
+
+@font-face {
+  font-family: "rubikdirt";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/rubikdirt.ttf");
+  font-display: swap;
+}
 
 html {
   scroll-behavior: smooth;
@@ -12,7 +21,7 @@ body {
 
 body {
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text);
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;

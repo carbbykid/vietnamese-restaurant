@@ -1,4 +1,3 @@
-
 /* eslint-disable */
 /** @type {import('next').NextConfig} */
 require("dotenv").config();
