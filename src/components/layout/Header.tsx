@@ -115,7 +115,7 @@ const Header = (): JSX.Element => {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden absolute top-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300 ${
+          className={`md:hidden absolute top-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-chipo-text text-center ease-in duration-300 ${
             nav ? "left-0" : "left-[-100%]"
           }`}
         >
@@ -130,19 +130,25 @@ const Header = (): JSX.Element => {
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/#gallery">Gallery</Link>
+              <Link href="/#product">Product</Link>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/work">Work</Link>
+              <Link href="/#collection">Collection</Link>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/contact">Contact</Link>
+              <Link href="/#contact">Contact</Link>
+            </li>
+            <li
+              onClick={handleNav}
+              className="p-4 text-4xl hover:text-gray-500"
+            >
+              <Link href="/shop">Shop</Link>
             </li>
           </ul>
         </div>
