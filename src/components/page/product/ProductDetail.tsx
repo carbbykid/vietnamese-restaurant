@@ -3,6 +3,7 @@ import { addProduct } from "redux/slice/cartSlice";
 import { useDispatch } from "react-redux";
 import Tabs from "components/common/Tabs";
 import ProductsRelation from "./ProductsRelation";
+import { toast } from "react-toastify";
 
 const ProductDetail = ({ productId }: { productId: string }) => {
   const dispatch = useDispatch();
@@ -40,7 +41,10 @@ const ProductDetail = ({ productId }: { productId: string }) => {
               <div className="mt-3">{product.shortDesc}</div>
 
               <button
-                onClick={() => dispatch(addProduct(product.id))}
+                onClick={() => {
+                  dispatch(addProduct(product));
+                  return toast.success("Product added successfully");
+                }}
                 className="px-5 mt-10 py-2 bg-chipo-heading hover:bg-chipo-blue duration-200 cursor-pointer text-white rounded-md"
               >
                 Add to Cart

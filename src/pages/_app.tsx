@@ -16,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           position="top-right"
           autoClose={2000}
           closeOnClick
+          pauseOnHover={false}
           theme="light"
         />
         <Component {...pageProps} />
