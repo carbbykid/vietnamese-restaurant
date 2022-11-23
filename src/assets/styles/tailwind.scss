@@ -19,45 +19,6 @@
   textarea {
     height: 108px;
   }
-
-  .flip-card-back {
-    transform: rotateY(180deg);
-  }
-
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    background: white;
-    padding: 38px 40px 34px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .flip-card {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    max-width: 600px;
-    height: 100%;
-    perspective: 1000px;
-  }
-
-  .flip-card-rotate {
-    transform: rotateY(180deg);
-  }
-
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
   
   .heading {
     @apply text-2xl font-bold tracking-tighter mb-[20px] md:text-5xl text-center text-chipo-heading;
@@ -75,9 +36,6 @@
     @apply border-4 border-chipo-gray-blur cursor-pointer hover:border-chipo-text duration-500 w-20 m-auto;
   }
 
-  .modal__video {
-    @apply w-[90vw] h-[300px] md:w-[800px] md:h-[500px]
-  }
   .swiper_custom {
     &.swiper {
       @apply pb-[50px];
@@ -105,8 +63,6 @@
       }
     }
   }
-
-
 
 }
 

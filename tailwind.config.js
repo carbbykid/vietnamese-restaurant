@@ -20,10 +20,9 @@ module.exports = {
         "chipo-orange": "#f62",
       },
       backgroundImage: {
-        "contact-bg": "url('/images/home/mobile-ap-bg.jpeg')",
+        "contact-bg": "url('/images/home/demo.jpeg')",
         "hero-shop":
           "url('https://res.cloudinary.com/duv7awivc/image/upload/v1668759173/shop/bg-shop_bhtavi_kgaeel.webp')",
-        "hero-home": "url('/images/home/hero-background.jpeg')",
       },
     },
   },
