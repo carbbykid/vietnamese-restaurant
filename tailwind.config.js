@@ -10,19 +10,21 @@ module.exports = {
       lg: "976px",
       xl: "1440px",
     },
+    fontFamily: {
+      montserrat: ["Montserrat, sans-serif"],
+      iCielAlina: ["iCielAlina, sans-serif"],
+      daysOne: ["daysOne, sans-serif"],
+    },
     extend: {
       colors: {
-        "chipo-heading": "#374048",
-        "chipo-blue": "#0084ff",
-        "chipo-text": "#4e575f",
-        "chipo-bg-second": "#f8fbfd",
-        "chipo-gray-blur": "#eee",
-        "chipo-orange": "#f62",
+        "chipo-heading": "#caa576",
+        "chipo-text": "#878787",
+        "chipo-bg-primary": "#01176c",
+        "chipo-bg-second": "#3a3a3a",
       },
       backgroundImage: {
-        "contact-bg": "url('/images/home/demo.jpeg')",
-        "hero-shop":
-          "url('https://res.cloudinary.com/duv7awivc/image/upload/v1668759173/shop/bg-shop_bhtavi_kgaeel.webp')",
+        "hero-second": "url('/images/home/bg_hero_blue.webp')",
+        "hero-shop": "url('/images/home/bg_hero.webp')",
       },
     },
   },

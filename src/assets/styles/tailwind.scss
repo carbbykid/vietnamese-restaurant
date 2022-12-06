@@ -59,7 +59,7 @@
     button {
       @apply rounded-full w-[40px] h-[40px] p-2 cursor-pointer hover:text-chipo-heading flex items-center justify-center;
       &.active {
-        @apply bg-chipo-blue text-white;
+        @apply bg-chipo-heading text-white;
       }
     }
   }
