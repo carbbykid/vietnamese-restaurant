@@ -3,10 +3,10 @@ import React from "react";
 
 const Popular = () => {
   return (
-    <div className="h-[900px] pt-48 bg-white">
+    <div className="h-[900px] pt-48">
       <div className="wrap-content">
         <h1 className="text-chipo-heading text-4xl font-montserrat text-center">
-          Popular Food
+          Most Popular Food
         </h1>
 
         <div className="flex rounded-lg">

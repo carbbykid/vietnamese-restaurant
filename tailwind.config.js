@@ -17,10 +17,13 @@ module.exports = {
     },
     extend: {
       colors: {
-        "chipo-heading": "#caa576",
-        "chipo-text": "#878787",
-        "chipo-bg-primary": "#01176c",
+        "chipo-heading": "#fafafa",
+        "chipo-text": "#f9ce75",
+        "chipo-hover-text": "#f6b42c",
+        "chipo-bg-primary": "#2B3A55",
+        "chipo-bg-hover": "#1e283b",
         "chipo-bg-second": "#3a3a3a",
+        "chipo-border": "F0CAA3",
       },
       backgroundImage: {
         "hero-second": "url('/images/home/bg_hero_blue.webp')",
