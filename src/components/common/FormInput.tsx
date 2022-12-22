@@ -6,18 +6,20 @@ type FormInput = InputHTMLAttributes<HTMLInputElement> & {
   errorMessage?: string;
   onChange: (e: any) => void;
   types?: string;
+  classNameWrap?: string;
 };
 
 const FormInput = (props: FormInput): JSX.Element => {
   const [focused, setFocused] = useState(false);
-  const { label, errorMessage, onChange, types, ...inputProps } = props;
+  const { label, errorMessage, onChange, types, classNameWrap, ...inputProps } =
+    props;
 
   const handleFocus = (e: any) => {
     setFocused(true);
   };
 
   return (
-    <div>
+    <div className={classNameWrap}>
       {label && <label>{label}:</label>}
       <InputType
         types={types}

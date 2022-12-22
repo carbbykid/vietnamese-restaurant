@@ -1,6 +1,9 @@
 import About from "components/pages/home/About";
 import Hero from "components/pages/home/Hero";
+import NewsLetter from "components/pages/home/NewsLetter";
 import Popular from "components/pages/home/Popular";
+import OurService from "components/pages/home/Service";
+import Testimonial from "components/pages/home/Testimonial";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -14,8 +17,11 @@ const Home: NextPage = () => {
       </Head>
 
       <Hero />
-      <Popular />
+      <OurService />
       <About />
+      <Popular />
+      <Testimonial />
+      <NewsLetter heading="" message="" />
     </div>
   );
 };

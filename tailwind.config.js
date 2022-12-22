@@ -14,11 +14,13 @@ module.exports = {
       montserrat: ["Montserrat, sans-serif"],
       iCielAlina: ["iCielAlina, sans-serif"],
       daysOne: ["daysOne, sans-serif"],
+      lucyCat: ["lucyCat, sans-serif"],
     },
     extend: {
       colors: {
         "chipo-heading": "#fafafa",
         "chipo-text": "#f9ce75",
+        "chipo-text-dark": "#2e2e2e",
         "chipo-hover-text": "#f6b42c",
         "chipo-bg-primary": "#2B3A55",
         "chipo-bg-hover": "#1e283b",
@@ -28,6 +30,7 @@ module.exports = {
       backgroundImage: {
         "hero-second": "url('/images/home/bg_hero_blue.webp')",
         "hero-shop": "url('/images/home/bg_hero.webp')",
+        contact: "url('/images/home/bg-contact.webp')",
       },
     },
   },
