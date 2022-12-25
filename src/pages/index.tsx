@@ -1,6 +1,8 @@
+import Footer from "components/layout/Footer";
 import About from "components/pages/home/About";
 import Hero from "components/pages/home/Hero";
 import NewsLetter from "components/pages/home/NewsLetter";
+import OurBlogs from "components/pages/home/OurBlogs";
 import Popular from "components/pages/home/Popular";
 import OurService from "components/pages/home/Service";
 import Testimonial from "components/pages/home/Testimonial";
@@ -22,6 +24,8 @@ const Home: NextPage = () => {
       <Popular />
       <Testimonial />
       <NewsLetter heading="" message="" />
+      <OurBlogs />
+      <Footer />
     </div>
   );
 };

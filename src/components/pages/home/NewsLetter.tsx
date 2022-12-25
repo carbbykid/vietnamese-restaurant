@@ -70,37 +70,20 @@ const NewsLetter = ({
 
               {inputs.slice(2).map((input, idx) => (
                 <FormInput
+                  classNameWrap="mb-5 md:mb-[34px] last-of-type:mb-0"
                   key={idx}
                   {...input}
                   value={formContact[input.name as "name"]}
                   onChange={handleFormContact}
-                  className="w-full bg-transparent border border-dashed rounded-md px-3 py-4 leading-[24px] font-light mb-5 md:mb-[34px] h-auto"
+                  className="w-full bg-transparent border border-dashed rounded-md px-3 py-4 font-light h-auto"
                 />
               ))}
-              {/* <div className="flex gap-4">
-                <input
-                  name="first_name"
-                  type="text"
-                  className="bg-transparent border border-dashed rounded-md px-3 py-4"
-                />
-                <input
-                  name="last_name"
-                  type="text"
-                  className="ml-2 bg-transparent border border-dashed rounded-md px-3 py-4"
-                />
-              </div>
-
-              <input
-                name="email"
-                type="email"
-                className="w-full mt-2 bg-transparent border border-dashed rounded-md px-3 py-4"
-              />
-              <textarea
-                name="message"
-                id=""
-                placeholder=""
-                className="w-full mt-2 bg-transparent border border-dashed rounded-md px-3 py-4"
-              ></textarea> */}
+              <button
+                type="submit"
+                className="button-primary w-full py-2.5 mt-1"
+              >
+                Submit
+              </button>
             </form>
           </div>
 
@@ -124,8 +107,15 @@ const NewsLetter = ({
             </p>
             <div className="border-2 w-10 border-chipo-text-dark my-4" />
             <div className="flex justify-between w-full">
-              <div className="flex-1 text-center">Lunch Time</div>
-              <div className="flex-1 text-center">Dinner Time</div>
+              <div className="flex-1 text-center">
+                <h4>Lunch Time</h4>
+                <p className="mt-2">10:00 AM - 01h00 PM</p>
+              </div>
+
+              <div className="flex-1 text-center">
+                <h4>Dinner Time</h4>
+                <p className="mt-2">6h00 PM - 20h00 PM</p>
+              </div>
             </div>
           </div>
         </div>
@@ -145,10 +135,10 @@ const inputs = [
     errorMessage: "This field is required.",
   },
   {
-    name: "lastName",
-    type: "text",
-    placeholder: "Last Name",
-    required: true,
+    name: "phoneNumber",
+    type: "number",
+    placeholder: "Phone Number",
+    required: false,
     errorMessage: "This field is required.",
   },
   {
@@ -162,14 +152,14 @@ const inputs = [
     name: "subject",
     type: "text",
     placeholder: "Subject",
-    required: true,
+    required: false,
     errorMessage: "This field is required.",
   },
   {
     name: "message",
     type: "text",
     placeholder: "Message",
-    required: true,
+    required: false,
     types: "textarea",
     errorMessage: "This field is required.",
     rows: "4",

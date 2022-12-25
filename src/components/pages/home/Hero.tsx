@@ -3,9 +3,9 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="h-screen pt-44 relative before:content-[''] before:bg-hero-shop before:bg-cover before:absolute before:top-0 before:left-0 before:right-0 before:z-[6] before:bottom-0 before:opacity-60">
+    <div className="min-h-[800px] h-screen pt-44 relative before:content-[''] before:bg-hero-shop before:bg-cover before:absolute before:top-0 before:left-0 before:right-0 before:z-[6] before:bottom-0 before:opacity-60">
       <video
-        className="absolute top-0 left-0 right-0 bottom-0 z-[5] object-cover w-screen h-screen"
+        className="absolute top-0 left-0 right-0 bottom-0 z-[5] object-cover w-screen min-h-[800px] h-screen"
         src="https://wildwoodrestaurants.co.uk/wp-content/uploads/WW-Website-Christmas-Carousel-SPARKLE-NEWPRICE.mp4"
         autoPlay
         loop
@@ -21,7 +21,7 @@ const Hero = () => {
               objectFit="contain"
               src="/images/home/food_herro.png"
             />
-            <p className="mt-5 w-[800px] my-0 mx-auto text-chipo-heading text-lg">
+            <p className="mt-5 w-[900px] my-0 mx-auto text-chipo-heading text-lg">
               Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
               consectetur, adipisicing elit.Eum non fugit fugiat reprehenderit.
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam

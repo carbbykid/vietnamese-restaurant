@@ -90,11 +90,11 @@ const Star = ({ rating }: { rating: any }) => {
   const ratingStar = Array.from({ length: 5 }, (elem, index) => {
     const starIndex = index + 1;
     return rating > starIndex ? (
-      <FaStar />
+      <FaStar key={index} />
     ) : rating > starIndex - 0.5 ? (
-      <FaStarHalfAlt />
+      <FaStarHalfAlt key={index} />
     ) : (
-      <FaRegStar />
+      <FaRegStar key={index} />
     );
   });
   return (
