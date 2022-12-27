@@ -9,11 +9,11 @@ const OurService = () => {
         <h1 className="heading text-chipo-heading text-center">
           Our Awesome Service
         </h1>
-        <div className="flex justify-between mt-20">
+        <div className="flex items-center md:justify-between mt-10 md:mt-20 flex-col md:flex-row">
           {fakeData.map((item, idx) => (
             <div
               key={idx}
-              className="p-8 w-[300px] text-center bg-[#3a3a3a] rounded-md"
+              className="mt-8 md:mt-0 p-8 w-[300px] text-center bg-[#3a3a3a] rounded-md"
             >
               <div className="p-2 bg-chipo-text inline-block rounded-md">
                 {item.icon}

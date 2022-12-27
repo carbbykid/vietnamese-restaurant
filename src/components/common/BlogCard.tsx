@@ -34,16 +34,12 @@ const BlogCard = ({
           </h4>
           <span className="mr-2 font-extralight">{blog.date}</span>
         </div>
-        <div className="flex justify-between mt-2">
-          <h4
-            className={`font-bold ${
-              primaryItem ? "mt-2 md:mt-3 text-2xl" : "text-lg"
-            } `}
-          >
+        <div className="flex justify-between items-center mt-4">
+          <h4 className={`font-bold ${primaryItem ? "text-2xl" : "text-lg"} `}>
             {blog.blogName}
           </h4>
           {primaryItem && (
-            <Link href={`/blog/${blog.id}`}>
+            <Link href={`/`}>
               <a className="cursor-pointer mt-1 decoration-current">
                 Read more
               </a>
