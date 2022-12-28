@@ -1,7 +1,7 @@
 import Pagination from "components/common/Pagination";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import ProductDetail from "../home/ProductDetail";
+// import ProductDetail from "../home/ProductDetail";
 
 const recordsPerPage = 9;
 
@@ -43,7 +43,8 @@ const Products = ({ heading }: { heading: string }): JSX.Element => {
           <hr className="divider mb-24" />
           <div className="flex flex-wrap justify-center">
             {listItems.map((product: any, idx: any) => (
-              <ProductDetail key={idx} product={product} />
+              // <ProductDetail key={idx} product={product} />
+              <div></div>
             ))}
           </div>
           {listItems.length === 0 ? (
