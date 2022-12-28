@@ -44,7 +44,7 @@ const Products = ({ heading }: { heading: string }): JSX.Element => {
           <div className="flex flex-wrap justify-center">
             {listItems.map((product: any, idx: any) => (
               // <ProductDetail key={idx} product={product} />
-              <div></div>
+              <div key={idx}></div>
             ))}
           </div>
           {listItems.length === 0 ? (
