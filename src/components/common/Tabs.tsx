@@ -33,7 +33,8 @@ const Tabs = ({ data }: { data: TabType[] }) => {
         {typeof currentTab.content === "string" ? (
           currentTab.content
         ) : (
-          <Reviews reviews={currentTab.content as unknown as ReviewType[]} />
+          // <Reviews reviews={currentTab.content as unknown as ReviewType[]} />
+          <div></div>
         )}
       </div>
     </div>
