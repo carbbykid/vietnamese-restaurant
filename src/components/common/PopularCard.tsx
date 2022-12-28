@@ -13,7 +13,7 @@ const PopularCard = ({ product }: { product: any }) => {
     <div className="bg-white drop-shadow-md rounded-md p-4 pb-5 text-chipo-bg-primary hover:scale-105 duration-300">
       <Link href={`/product/${product.id}`}>
         <a className="cursor-pointer">
-          <div className="duration-200 rounded-sm">
+          <div className="duration-200 flex justify-center rounded-sm">
             <Image
               src={product.imgUrl}
               width={500}

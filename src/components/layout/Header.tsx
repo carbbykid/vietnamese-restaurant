@@ -91,7 +91,7 @@ const Header = (): JSX.Element => {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden absolute top-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-chipo-text text-center ease-in duration-300 ${
+          className={`md:hidden absolute top-0 font-iCielAlina tracking-[2px] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-[#001253] text-center ease-in duration-300 ${
             nav ? "left-0" : "left-[-100%]"
           }`}
         >

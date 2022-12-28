@@ -13,15 +13,15 @@ import { RiDoubleQuotesR } from "react-icons/ri";
 const Testimonial = () => {
   return (
     <div className="pb-16 pt-14 relative">
-      <div className="absolute bottom-2 -left-32">
+      <div className="absolute -bottom-16 md:bottom-2 -left-32 z-9">
         <Image src="/images/home/food-1.png" width={300} height={300} />
       </div>
 
-      <div className="absolute top-10 -right-20">
+      <div className="absolute -top-16 md:top-10 -right-20 z-9">
         <Image src="/images/home/food-2.png" width={200} height={200} />
       </div>
 
-      <div className="wrap-content max-w-5xl ">
+      <div className="wrap-content max-w-5xl relative z-10 ">
         <h2 className="title text-center">Testimonial</h2>
         <h1 className="heading text-chipo-heading text-center">
           What our customer say about us

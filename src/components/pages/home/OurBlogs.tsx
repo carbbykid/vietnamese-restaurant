@@ -4,10 +4,10 @@ import React from "react";
 
 const OurBlogs = () => {
   return (
-    <div className="h-[850px] pt-28 bg-[#fffaf3]">
+    <div className="md:pt-24 pt-14 pb-16 md:pb-28 bg-[#fffaf3]">
       <div className="wrap-content">
         <h1 className="heading text-chipo-text-dark">Recent Blog Posts</h1>
-        <div className="grid grid-cols-2 justify-between gap-4 mt-10">
+        <div className="grid md:grid-cols-2 justify-between gap-4 mt-10">
           {fakeData.slice(0, 3).map((item, idx) => (
             <BlogCard
               key={idx}

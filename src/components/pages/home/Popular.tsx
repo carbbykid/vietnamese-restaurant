@@ -3,13 +3,13 @@ import React from "react";
 
 const Popular = () => {
   return (
-    <div className="h-[850px] pt-28 bg-[#fffaf3]">
+    <div className="md:h-[700px] pt-14 pb-16 md:pt-20 bg-[#fffaf3]">
       <div className="wrap-content">
         <h1 className="heading text-chipo-text-dark text-center">
           Most Popular Food
         </h1>
 
-        <div className="flex justify-between gap-10 mt-20">
+        <div className="flex flex-col md:flex-row justify-between gap-10 first-of-type:mt-14 mt-20">
           {fakeData.map((item) => (
             <PopularCard key={item.id} product={item} />
           ))}

@@ -45,14 +45,14 @@ const NewsLetter = ({
   };
 
   return (
-    <div className="pt-14 pb-24 bg-contact bg-cover bg-no-repeat relative">
+    <div className="pt-14 pb-16 lg:pb-24 bg-contact bg-cover bg-no-repeat relative">
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#674747] opacity-70" />
       <div className="wrap-content relative z-10">
         <h2 className="title text-center">Contact us</h2>
         <div className="heading text-center">
           Vietnamese Restaurant Newsletter
         </div>
-        <div className="grid grid-cols-5 gap-8 mt-20">
+        <div className="lg:grid lg:grid-cols-5 md:gap-8 mt-16 md:mt-20">
           <div className="col-span-3">
             <form action="" className="">
               <div className="flex gap-3 justify-between">
@@ -87,7 +87,7 @@ const NewsLetter = ({
             </form>
           </div>
 
-          <div className="col-span-2 rounded-lg bg-chipo-hover-text mb-10 p-5 flex flex-col justify-center items-center text-center">
+          <div className="mt-16 lg:mt-0 col-span-2 rounded-lg bg-chipo-hover-text mb-10 p-5 flex flex-col justify-center items-center text-center">
             <Image
               width={80}
               height={80}

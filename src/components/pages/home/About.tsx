@@ -6,7 +6,7 @@ const About = () => {
     <div className="pb-40">
       <div className="flex md:flex-row-reverse gap-10 justify-between wrap-content flex-col">
         <div className="flex-1">
-          <div className="flex rounded-lg">
+          <div className="flex justify-center rounded-lg">
             <Image
               src="/images/home/about_us.webp"
               width={600}

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaDog, FaRegEdit, FaWaze } from "react-icons/fa";
+import { FaLink, FaWaze } from "react-icons/fa";
 
 const BlogCard = ({
   blog,
@@ -15,9 +15,9 @@ const BlogCard = ({
   const primaryItem = index === 0;
   return (
     <div
-      className={`text-chipo-bg-primary ${classNameWrap} ${
+      className={`text-chipo-bg-primary ${classNameWrap} md:${
         !primaryItem && "flex gap-4"
-      }`}
+      } mt-8 md:mt-0`}
     >
       <Image
         src={blog.imgUrl}
@@ -26,22 +26,28 @@ const BlogCard = ({
         objectFit="cover"
       />
 
-      <div className="flex-1">
+      <div className={`flex-1 ${primaryItem ? "mt-2" : ""} `}>
         <div className="flex items-center">
-          <FaWaze className="mr-2" />
           <h4 className="mr-2 font-medium text-chipo-hover-text">
             {blog.creater}
           </h4>
+          <FaWaze className="mr-2" />
           <span className="mr-2 font-extralight">{blog.date}</span>
         </div>
-        <div className="flex justify-between items-center mt-4">
-          <h4 className={`font-bold ${primaryItem ? "text-2xl" : "text-lg"} `}>
-            {blog.blogName}
-          </h4>
+        <div className="flex justify-between items-center mt-2">
+          <Link href={`/`}>
+            <h4
+              className={`font-bold ${
+                primaryItem ? "text-2xl" : "text-lg"
+              } cursor-pointer hover:underline duration-200 `}
+            >
+              {blog.blogName}
+            </h4>
+          </Link>
           {primaryItem && (
             <Link href={`/`}>
-              <a className="cursor-pointer mt-1 decoration-current">
-                Read more
+              <a className="flex hover:underline duration-200 items-center cursor-pointer mt-1 decoration-current">
+                Read more <FaLink className="ml-2 hover:underline" />
               </a>
             </Link>
           )}
