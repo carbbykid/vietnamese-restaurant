@@ -1,4 +1,4 @@
-import Reviews, { ReviewType } from "components/page/product/Reviews";
+// import Reviews, { ReviewType } from "components/page/product/Reviews";
 
 import { useState } from "react";
 
