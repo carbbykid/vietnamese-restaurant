@@ -1,4 +1,4 @@
-import HeroShop from "components/pages/menu/HeroShop";
+import HeroPage from "components/pages/menu/HeroPage";
 import ProductList from "components/pages/menu/ProductList";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -12,7 +12,7 @@ const Menu: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <HeroShop product="Menu" />
+      <HeroPage product="Menu" />
       <ProductList />
     </div>
   );

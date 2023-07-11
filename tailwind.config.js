@@ -29,7 +29,7 @@ module.exports = {
       },
       backgroundImage: {
         "hero-second": "url('/images/home/bg_hero_blue.webp')",
-        "hero-shop": "url('/images/home/bg_hero.webp')",
+        "hero-page ": "url('/images/home/bg_hero.webp')",
         contact: "url('/images/home/bg-contact.webp')",
       },
     },
